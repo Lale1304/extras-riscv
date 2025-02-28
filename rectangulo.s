@@ -27,3 +27,32 @@ li t2 4                 # lado
 # escriba
 # su codigo
 # aqui
+
+mul t3 t0 t0
+mul t4 t1 t1
+mul t5 t2 t2
+
+add t6 t3 t4
+beq t6 t5 es_rectangulo
+add t6 t3 t5
+beq t6 t4 es_rectangulo
+add t6 t4 t5
+beq t6 t3 es_rectangulo
+
+j no_rectangulo
+
+es_rectangulo:
+li a0 4
+la a1 si
+ecall 
+j fin
+
+no_rectangulo:
+li a0 4
+la a1 no
+ecall
+
+fin: 
+li a0 9
+ecall
+
